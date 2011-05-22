@@ -121,12 +121,11 @@ $.widget( "dyn.imgpreview", {
 				.removeClass( that.options.loader.cssClass + "-loading" )
 				.html( img )
 				.append( "<p>" + desc + "</p>" );
-				that._trigger( "open", ev, this._ui() );
 		})
 		.error( function () {
 			that.container.addClass( "ui-helper-hidden" );
 		});
-
+		this._trigger( "open", ev, this._ui() );
 	},
 	_close : function( ev ) {
 		var that = this;
@@ -186,7 +185,7 @@ $.widget( "dyn.imgpreview", {
 		return {
 			container : this.container,
 			imageContainer : this.imageContainer,
-			imageUrl : this.element.data( "img" ),
+			image : this.element.data( "img" ),
 			description : this._getDescription()
 		};
 	},
