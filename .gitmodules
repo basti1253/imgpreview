@@ -1,0 +1,6 @@
+[submodule "lib/jquery-ui"]
+	path = lib/jquery-ui
+	url = https://github.com/jquery/jquery-ui.git
+[submodule "lib/ajaxHooks"]
+	path = lib/ajaxHooks
+	url = https://github.com/jaubourg/ajaxHooks.git
