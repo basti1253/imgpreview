@@ -6,7 +6,7 @@
  *	jquery.ui.core.js
  *	jquery.ui.widget.js
  *
- * @version 1.1pre
+ * @version 1.3pre
  * @since june 2009
  *
  */
