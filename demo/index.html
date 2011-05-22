@@ -18,6 +18,15 @@
             height: 100px;
             width: 100px;
         }
+        /*.dyn-imgpreview {
+            -webkit-transition: all 0.25s ease-in-out;
+            -moz-transition: all 0.25 ease-in-out;
+            -o-transition: all 0.25s ease-in-out;
+            -Ms-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+            top : 0;
+            left: 0;
+        }*/
     </style>
 
     <link rel="stylesheet" href="../lib/jquery-ui/themes/base/jquery.ui.all.css" type="text/css" media="screen">
@@ -27,9 +36,9 @@
     <script src="../lib/jquery-ui/ui/jquery.ui.widget.js"></script>
     <script src="../lib/jquery-ui/ui/jquery.ui.position.js"></script>
 
-    <!--<script src="../lib/ajaxHooks/src/ajax/img.js"></script>
-    <script src="../src/dyn.imgpreview.js"></script>-->
-    <script src="../dist/dyn.imagepreview.min.js"></script>
+    <script src="../lib/ajaxHooks/src/ajax/img.js"></script>
+    <script src="../src/dyn.imgpreview.js"></script>
+    <!--<script src="../dist/dyn.imagepreview.min.js"></script>-->
 
     <script type="text/javascript">
         window.log = function () {
@@ -53,34 +62,21 @@
         };
 
         $(function () {
-            $( '.demo' ).imgpreview();
+            $( '.demo' ).imgpreview({
+                open : function ( ev , ui ) {
+                    log( ev, ui );
+                    log( ui.img)
+                },
+                close : function ( ev, ui ) {
+                    log( ev, ui );
+                }
+            });
         });
     </script>
 
 </head>
     <div style="width: 100%; height: 100%;">
         <h1>jQueryUI imgpreview demo</h1>
-
-        <div id="demoarea">
-            <h2>
-                Demoarea
-            </h2>
-            <div class="demo" data-img="rambo-tux.png" data-desc="test123">
-                Hover me
-            </div>
-
-            <div class="demo" data-img="image.php" data-desc="preload">
-                Should take 2sec -needs php
-            </div>
-
-            <div class="demo" data-img="rambo-tux.png" data-desc="test123">
-                Hover me
-            </div>
-
-            <div class="demo" data-img="rambo-tux.png" data-desc="test123">
-                Hover me
-            </div>
-        </div>
 
         <div>
             <h2>short description</h2>
@@ -93,6 +89,15 @@
             <h2>options</h2>
             <ul>
                 <li>
+                    position - <a href="http://jqueryui.com/demos/position/">jqueryUI position options</a>
+                </li>
+                <li>
+                    loader
+                    <ul>
+                        <li>uiClass</li>
+                        <li>cssClass</li>
+                        <li>loadingText</li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -102,24 +107,29 @@
                 <li>open</li>
                 <li>close</li>
             </ul>
-            <pre>
-                <code>
-$( '.demo' ).imgpreview({
-/* ui
-{
-    container : this.container,
-    imageContainer : this.imageContainer,
-    image : this.element.data( "img" ),
-    description : this._getDescription()
-};
-*/
-    open : function ( ev, ui ) {},
-    close : function ( ev, ui ) {}
-});
-                </code>
-            </pre>
         </div>
     </div>
+    <div id="demoarea">
+        <h2>
+            Demoarea
+        </h2>
+        <div class="demo" data-img="rambo-tux.png" data-desc="Rambo Tux by santang - Creative Commons by-nc-sa">
+            Hover me
+        </div>
+
+        <div class="demo" data-img="image.php" data-desc="preload - Rambo Tux by santang - Creative Commons by-nc-sa">
+            Should take 2sec -needs php
+        </div>
+
+        <div class="demo" data-img="rambo-tux.png" data-desc="Rambo Tux by santang - Creative Commons by-nc-sa">
+            Hover me
+        </div>
+
+        <div class="demo" data-img="rambo-tux.png" data-desc="Rambo Tux by santang - Creative Commons by-nc-sa">
+            Hover me
+        </div>
+    </div>
+
     <ul>
         <li><a href="http://jquery.com">jQuery</a></li>
         <li><a href="http://jqueryui.com">jQueryUI</a></li>

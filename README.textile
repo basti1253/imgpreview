@@ -1,0 +1,17 @@
+h1. jQueryUI imagepreview
+
+h2. short description
+
+p. Preview on hover/focus with a thumb provided by data attributes
+
+h2. options
+
+* position - position rendering
+* loader { uiClass : "ui-dialog", cssClass : 'dyn-imgpreview-preloader', loadingText : 'Bitte warten - Bild wird geladen' }
+
+h2. custom events
+
+* open
+* close
+
+Have fun :)
