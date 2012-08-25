@@ -1,6 +1,6 @@
 <?php
 
-sleep(2);
+sleep(1);
 $img = "rambo-tux.png";
 
 ob_start();

@@ -6,7 +6,7 @@
  *	jquery.ui.core.js
  *	jquery.ui.widget.js
  *
- * @version 1.3pre
+ * @version 1.3
  * @since june 2009
  *
  */
@@ -41,7 +41,7 @@ $.widget( "dyn.imgpreview", {
 		this._hoverable();
 		this._focusable();
 
-		this._bind({
+		this._on({
 			focus : "_open",
 			mouseenter : "_open",
 			blur : "_close",
